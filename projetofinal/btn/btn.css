@@ -40,35 +40,57 @@ h6 {
     letter-spacing: -0.025em;
 }
 
-
+.container {
+    margin: 10rem;
+    display: flex;
+    gap: 0;
+    flex-direction: row;
+}
 
 
 .container__h1 {
     background-color: #5A381D;
-    
-    
+    flex: 1;
 }
 
 .h1 {
-    font-size: 5rem;
+    min-width: 14ch;
+    font-size: 2rem;
     text-transform: initial;
     text-align: center;
     padding-block: 5rem;
     padding-inline: 5rem;
-    
+
 }
 
 .container__form {
     background-color: #A1A17F;
+    flex: 2;
 }
 
 
 
 .form {
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+
     margin-inline: 2rem;
     margin-block: 2rem;
-    
+
+}
+
+.form__names, .form__email, .form__password {
+    margin-block: 2rem;
+}
+
+.form__name {
+}
+.form__email {
+
+}
+.form__password {
+
 }
 
 
@@ -76,5 +98,12 @@ h6 {
 .label {
     color: #000000;
     font-weight: 400;
+    padding-right: 1rem;
+}
 
+.input {
+    background: none;
+    border: 0;
+    color: #f3f3f3;
+    
 }
