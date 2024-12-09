@@ -1,0 +1,78 @@
+/* pré definições */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    line-height: calc(1em + 0.5rem);
+    font: inherit;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', serif;
+    color: #f3f3f3;
+    background: linear-gradient(90deg, #212121, #000000, #212121);
+    display: flex;
+}
+
+img,
+picture {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    border: none;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    letter-spacing: -0.025em;
+}
+
+.contact-container {
+    background-color: #fff;
+    display: flex;
+    gap: 2rem;
+    flex-direction: row;
+    margin-block: 5rem;
+    margin-inline: 5rem;
+}
+
+.contact-left,
+.contact-right {
+    background-color: aqua;
+    gap: 2rem;
+    display: flex;
+    flex-direction: row;
+    margin-inline: 2rem;
+    margin-block: 2rem;
+    width: 30vh;
+}
+
+.img {
+    display: flex;
+    flex-direction: row;
+    width: 40vh;
+    height: auto;
+}
+
+img {
+    width: 20vh;
+    height: auto;
+    margin-inline: 1rem;
+    margin-block: 1rem;
+}
