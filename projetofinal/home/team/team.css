@@ -1,0 +1,145 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    line-height: calc(1em + 0.5rem);
+    font: inherit;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', serif;
+    color: #f3f3f3;
+    background: linear-gradient(90deg, #212121, #000000, #212121);
+}
+
+img,
+picture {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    border: none;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    letter-spacing: -0.025em;
+}
+
+.container {
+    /* border: 1px solid #fff; */
+    display: flex;
+    flex-direction: column;
+
+}
+
+.header {
+    background-color: #86805E;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header h1 {
+    margin-top: 5rem ;
+    font-size: 4rem ;
+    font-weight: 600;
+}
+
+.header h3 {
+    margin-bottom: 5rem ;
+    font-size: 1.5rem ;
+}
+
+.container-info {
+    /* border: 1px solid blue; */
+    display: flex;
+    gap: 1rem;
+    flex: 1;
+    justify-content: space-around;
+    margin-block: 4rem;
+    padding-block: 4rem;
+}
+
+.member {
+    background-color: #86805E;
+    display: flex;
+    flex-direction: column;
+    margin-inline: 2rem;
+    margin-block: 3rem;
+    margin-bottom: 5rem;
+    padding-block: 1rem;
+    padding-inline: 1rem;
+    max-width: 20rem;
+    min-width: 12rem;
+}
+
+.member-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin-block: 1.5rem;
+    padding-inline: 1.5rem;
+}
+
+.photo {
+    border: 2px solid #D9C5B2;
+    border-radius: 100%
+}
+
+.member-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-inline: 1rem;
+
+}
+
+.name {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.info {
+    font-size: 1.125rem;
+    text-indent: 1.6rem;
+    text-align: justify;
+    margin-block: 1.4rem;
+}
+
+.function {
+    margin-block: 2rem ;
+    text-decoration: overline;
+    font-weight: 500;
+    color: #F5EFDF;
+}
+
+.social-media {
+    /* border: 1px solid black; */
+    display: flex;
+    gap: 2rem;
+    text-decoration: none;
+    list-style: none;
+}
+
+.icon-img {
+    width: 3rem;
+
+}
