@@ -15,7 +15,7 @@ body {
     min-height: 100vh;
     font-family: 'Poppins', serif;
     color: #f3f3f3;
-    background: linear-gradient(to right,#AD8B6F, #745A41,#473423 );
+    background: linear-gradient(to right, #AD8B6F, #745A41, #473423);
 }
 
 img,
@@ -55,7 +55,7 @@ h6 {
     border-radius: 2rem;
     width: 50vh;
     height: auto;
-    background-color: #fff;
+    background-color: #F5EDDE;
     /* overflow para conseguir dar uma margin-block no form */
     /* overflow: hidden; */
     margin-inline: 7rem;
@@ -63,7 +63,7 @@ h6 {
 }
 
 .container-form form {
-    background-color: #fff;
+    background-color: #F5EDDE;
     border: 2px solid #AB6838;
     border-radius: 1rem;
     padding-block: 3rem;
@@ -99,6 +99,14 @@ h6 {
 .input-group {
     padding-block: 1.5rem;
 }
+.span-required {
+    font-size: 12px;
+    color: #000;
+    margin: 3px 0 0 1px;
+    color: red;
+    display: none;
+
+}
 
 .name-box {
     /* border: 1px solid rgb(237, 237, 237); */
@@ -132,7 +140,7 @@ input {
     display: flex;
     border-radius: 10px;
 }
- 
+
 input::placeholder {
     width: 100%;
     height: auto;
@@ -140,7 +148,7 @@ input::placeholder {
     color: #AB6838;
     padding-inline: 1rem;
     padding-block: 0.2rem;
-} 
+}
 
 input:not(:placeholder-shown) {
     border: 1px solid #553028;
@@ -148,7 +156,7 @@ input:not(:placeholder-shown) {
     padding-block: 0.2rem;
     font-size: 0.9rem;
     color: #ff9c55;
-    
+
 }
 
 .btn-box {

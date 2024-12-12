@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,45 +13,116 @@
 </head>
 
 <body>
-    
-<!-- container para controle de espaçamento -->
-<div class="container">
 
     <!-- container para controle de espaçamento -->
-    <div class="container-form">
-        <form action="validation.html">
+    <div class="container">
 
-            <!-- cabeçalho do meu formulário -->
-            <div class="form-header">
-                <h1>Login</h1>
-                <img src="img/icons8-café-50.png" >
-            </div>
+        <!-- container para controle de espaçamento -->
+        <div class="container-form">
+            <form action="validation.html">
 
-            <!-- linha estética de separação -->
-            <div class="line"></div>
-
-            <!-- grupo de inputs -->
-            <div class="input-group">
-                <div class="name-box">
-                    <label for="name, email" class="label-name">Usuário</label>
-                    <input type="text" class="input-name" id="name" placeholder="Digite seu nome ou email">
+                <!-- cabeçalho do meu formulário -->
+                <div class="form-header">
+                    <h1>Login</h1>
+                    <img src="img/icons8-café-50.png">
                 </div>
 
-                <div class="password-box">
-                    <label for="password" class="label-password">Senha</label>
-                    <input type="password" class="input-password" id="password"
-                        placeholder="Digite sua senha">
+                <!-- linha estética de separação -->
+                <div class="line"></div>
+
+                <!-- grupo de inputs -->
+                <div class="input-group">
+                    <div class="name-box">
+                        <label for="name, email" class="label-name">Usuário</label>
+                        <input type="text" class="required input-name" id="name" placeholder="Digite seu nome ou email" oninput="nameValidate()" >
+                    </div>
+
+                    <div class="password-box">
+                        <label for="password" class="label-password">Senha</label>
+                        <input type="password" class="required input-password" id="password" placeholder="Digite sua senha"
+                        oninput="mainPasswordValidate()">
+                    </div>
                 </div>
-            </div>
 
-            <div class="line"></div>
+                <div class="line"></div>
 
-            <!-- botão de enviar -->
-            <div class="btn-box">
-                <input class="input-btn" type="submit" name="input-btn" id="input-btn" value="Login">
-            </div>
-        </form>
+                <!-- botão de enviar -->
+                <div class="btn-box">
+                    <input class="input-btn" type="submit" name="input-btn" id="input-btn" value="Login">
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 </body>
+<script>
+    const form = document.getElementById('form');
+    const campos = document.querySelectorAll('.required');
+    const spans = document.querySelectorAll('.span-required');
+    const emailRegex = /^\w+([-+.']\w+)*@([-.]\w+)*\.\w+([-.]\w+)*$/;
+
+    // form.addEventListener('submit', (event) =>{
+    //     event.preventDefault();
+    //     nameValidate();
+    //     emailValidate();
+    //     mainPasswordValidate();
+    //     comparePassword();
+    // });
+
+
+    function setError(index) {
+        campos[index].style.border = '2px solid #e63636';
+        spans[index].style.display = 'block';
+    }
+
+    function removeError(index) {
+        campos[index].style.border = '';
+        spans[index].style.display = 'none';
+    }
+
+    function nameValidate() {
+        if (campos[0].value.length < 3) 
+        {
+            setError(0);
+        }
+        else {
+            removeError(0);
+        }
+    }
+
+    function emailValidate() {
+        if (!emailRegex.test(campos[1].value)) 
+        {
+            setError(1);
+        }
+        else 
+        {
+            removeError(1);
+        }
+    }
+
+    function mainPasswordValidate() {
+        if(campos[2].value.length < 8) 
+        {
+            setError(2);
+        }
+        else
+        {
+            removeError(2);
+            comparePassword()
+        }
+    }
+
+    function comparePassword() {
+        if (campos[2] == campos[3] && campos[3].value.length >=8) 
+        {
+            removeError(3);
+        }
+        else
+        {
+            setError(3);
+        }
+    }
+
+</script>
+
 </html>

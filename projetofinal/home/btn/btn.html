@@ -17,7 +17,7 @@
 
         <!-- container para controle de espaçamento -->
         <div class="container-form">
-            <form action="login/login.html">
+            <form id="form" action="login/login.html">
 
                 <!-- cabeçalho do meu formulário -->
                 <div class="form-header">
@@ -32,23 +32,32 @@
                 <div class="input-group">
                     <div class="name-box">
                         <label for="name" class="label-name">Nome</label>
-                        <input type="text" class="input-name" id="name" placeholder="Digite seu nome">
+                        <input type="text" class="input-name required" id="name" placeholder="Digite seu nome"
+                            oninput="nameValidate()">
+                        <span class="span-required">Nome deve conter no mínimo 3 caracteres</span>
                     </div>
 
                     <div class="email-box">
                         <label for="email" class="label-email">E-mail</label>
-                        <input type="email" class="input-email" id="email" placeholder="Digite seu e-mail">
+                        <input type="email" class="required input-email" id="email" placeholder="Digite seu e-mail"
+                            oninput="emailValidate()">
+                        <span class="span-required">Digite um email válido</span>
                     </div>
 
                     <div class="password-box">
                         <label for="password" class="label-password">Senha</label>
-                        <input type="password" class="input-password" id="password" placeholder="Digite sua senha">
+                        <input type="password" class="required input-password" id="password"
+                            placeholder="Digite sua senha" oninput="mainPasswordValidate()" >
+                        <span class="span-required">Digite uma senha com no mínimo 8 caracteres</span>
                     </div>
 
                     <div class="password-box">
                         <label for="cpassword" class="label-password">Confirme sua senha</label>
-                        <input type="password" class="input-password" id="cpassword" placeholder="Digite sua senha">
+                        <input type="password" class="required input-password" id="cpassword"
+                            placeholder="Digite sua senha" oninput="comparePassword()">
+                        <span class="span-required">Senhas devem ser compatíves</span>
                     </div>
+
                 </div>
 
                 <div class="line"></div>
@@ -61,5 +70,76 @@
         </div>
     </div>
 </body>
+<script>
+    const form = document.getElementById('form');
+    const campos = document.querySelectorAll('.required');
+    const spans = document.querySelectorAll('.span-required');
+    const emailRegex = /^\w+([-+.']\w+)*@([-.]\w+)*\.\w+([-.]\w+)*$/;
+
+    // form.addEventListener('submit', (event) =>{
+    //     event.preventDefault();
+    //     nameValidate();
+    //     emailValidate();
+    //     mainPasswordValidate();
+    //     comparePassword();
+    // });
+
+
+    function setError(index) {
+        campos[index].style.border = '2px solid #e63636';
+        spans[index].style.display = 'block';
+    }
+
+    function removeError(index) {
+        campos[index].style.border = '';
+        spans[index].style.display = 'none';
+    }
+
+    function nameValidate() {
+        if (campos[0].value.length < 3) 
+        {
+            setError(0);
+        }
+        else {
+            removeError(0);
+        }
+    }
+
+    function emailValidate() {
+        if (!emailRegex.test(campos[1].value)) 
+        {
+            setError(1);
+        }
+        else 
+        {
+            removeError(1);
+        }
+    }
+
+    function mainPasswordValidate() {
+        if(campos[2].value.length < 8) 
+        {
+            setError(2);
+        }
+        else
+        {
+            removeError(2);
+            comparePassword()
+        }
+    }
+
+    function comparePassword() {
+        if (campos[2] == campos[3] && campos[3].value.length >=8) 
+        {
+            removeError(3);
+        }
+        else
+        {
+            setError(3);
+        }
+    }
+
+</script>
+
 
 </html>
